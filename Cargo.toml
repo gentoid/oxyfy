@@ -8,3 +8,7 @@ edition = "2018"
 
 [dependencies]
 azul = { git = "https://github.com/maps4print/azul", rev = "a6d58ae4fc8e2657981cc510d9f7fbcdc5af0023" }
+libpulse-binding = "2"
+libpulse-simple-binding = "2"
+minimp3 = "0.3"
+# sfml = { version = "0.14", default-features = false, features = ["audio"] }
