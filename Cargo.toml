@@ -1,6 +1,6 @@
 [package]
-name = "rust-audio-player"
-version = "0.1.0"
+name = "oxyfy"
+version = "0.0.1"
 authors = ["Viktor Lazarev <taurus101v@gmail.com>"]
 edition = "2018"
 

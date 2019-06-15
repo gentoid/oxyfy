@@ -692,6 +692,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "oxyfy"
+version = "0.0.1"
+dependencies = [
+ "azul 0.1.0 (git+https://github.com/maps4print/azul?rev=a6d58ae4fc8e2657981cc510d9f7fbcdc5af0023)",
+ "libpulse-binding 2.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libpulse-simple-binding 2.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "minimp3 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "percent-encoding"
 version = "1.0.1"
 source = "git+https://github.com/maps4print/azul-dependencies?rev=380b7e7cba8b728a3fc89fe28952e3b07aa624e7#380b7e7cba8b728a3fc89fe28952e3b07aa624e7"
@@ -752,16 +762,6 @@ dependencies = [
  "lazy_static 1.2.0 (git+https://github.com/maps4print/azul-dependencies?rev=380b7e7cba8b728a3fc89fe28952e3b07aa624e7)",
  "libc 0.2.45 (git+https://github.com/maps4print/azul-dependencies?rev=380b7e7cba8b728a3fc89fe28952e3b07aa624e7)",
  "num_cpus 1.9.0 (git+https://github.com/maps4print/azul-dependencies?rev=380b7e7cba8b728a3fc89fe28952e3b07aa624e7)",
-]
-
-[[package]]
-name = "rust-audio-player"
-version = "0.1.0"
-dependencies = [
- "azul 0.1.0 (git+https://github.com/maps4print/azul?rev=a6d58ae4fc8e2657981cc510d9f7fbcdc5af0023)",
- "libpulse-binding 2.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "libpulse-simple-binding 2.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "minimp3 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
