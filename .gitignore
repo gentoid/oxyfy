@@ -1,1 +1,5 @@
 /target/
+
+### IDE's & editors
+/.vs
+/.vscode
