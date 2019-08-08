@@ -9,8 +9,16 @@ edition = "2018"
 [dependencies]
 nannou = "0.10"
 
-[replace]
-"vulkano:0.13.0" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "85be6295d0cb0a0a4cd405084fa2a71a572a94d7" }
-"vulkano-win:0.13.0" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "85be6295d0cb0a0a4cd405084fa2a71a572a94d7" }
-"vulkano-shaders:0.13.0" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "85be6295d0cb0a0a4cd405084fa2a71a572a94d7" }
-"vk-sys:0.4.0" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "85be6295d0cb0a0a4cd405084fa2a71a572a94d7" }
+### Uncomment for Windows
+# [replace]
+# "vulkano:0.13.0" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "85be6295d0cb0a0a4cd405084fa2a71a572a94d7" }
+# "vulkano-win:0.13.0" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "85be6295d0cb0a0a4cd405084fa2a71a572a94d7" }
+# "vulkano-shaders:0.13.0" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "85be6295d0cb0a0a4cd405084fa2a71a572a94d7" }
+# "vk-sys:0.4.0" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "85be6295d0cb0a0a4cd405084fa2a71a572a94d7" }
+
+## Uncomment for Arch Linux. I have local vulcano repo with updated shaderc dependency to "0.6"
+[patch.crates-io]
+"vulkano" = { path = "../vulkano/vulkano" }
+"vulkano-win" = { path = "../vulkano/vulkano-win" }
+"vulkano-shaders" = { path = "../vulkano/vulkano-shaders" }
+"vk-sys" = { path = "../vulkano/vk-sys" }
