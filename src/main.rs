@@ -53,6 +53,6 @@ fn update(_app: &App, model: &mut Model, _update: Update) {
 }
 
 fn view(app: &App, model: &Model, frame: &Frame) {
-    // frame.clear(PURPLE);
+    frame.clear(PURPLE);
     model.ui.draw_to_frame(app, &frame).unwrap();
 }
