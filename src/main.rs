@@ -81,6 +81,10 @@ fn update(_app: &App, model: &mut Model, _update: Update) {
         .color(ui::color::BLUE)
         .label_font_size(16)
         .border(1.0)
+        .scrollbar_on_top()
+        .label_x(position::Relative::Place(position::Place::Start(Some(
+            10.0,
+        ))))
         .set(model.ids.dd_list, ui)
     {
         println!("selected {:?}", selected);
