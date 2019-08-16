@@ -24,6 +24,10 @@ fn model(app: &App) -> Model {
 
     let mut ui = app.new_ui().build().unwrap();
 
+    let assets_path = app.assets_path().expect("There's no assets path!");
+    let font_path = assets_path.join("fonts/DroidSansMono.ttf");
+    ui.fonts_mut().insert_from_file(font_path).ok();
+
     let filenames = vec![
         "Option 1".to_string(),
         "Option 2".to_string(),
