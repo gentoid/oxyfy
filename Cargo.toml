@@ -8,9 +8,10 @@ edition = "2018"
 
 [dependencies]
 nannou = "0.10"
+glob = "0.3"
 
-[replace]
-"vulkano:0.13.0" = { git = "https://github.com/Abendstolz/vulkano.git", rev = "f83c3768ee692db786193c8c2e03413006ea8359" }
-"vulkano-win:0.13.0" = { git = "https://github.com/Abendstolz/vulkano.git", rev = "f83c3768ee692db786193c8c2e03413006ea8359" }
-"vulkano-shaders:0.13.0" = { git = "https://github.com/Abendstolz/vulkano.git", rev = "f83c3768ee692db786193c8c2e03413006ea8359" }
-"vk-sys:0.4.0" = { git = "https://github.com/Abendstolz/vulkano.git", rev = "f83c3768ee692db786193c8c2e03413006ea8359" }
+[patch.crates-io]
+"vulkano" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "0a8944362a176885d13a84a1ea5a0e3d9b09b706" }
+"vulkano-win" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "0a8944362a176885d13a84a1ea5a0e3d9b09b706" }
+"vulkano-shaders" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "0a8944362a176885d13a84a1ea5a0e3d9b09b706" }
+"vk-sys" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "0a8944362a176885d13a84a1ea5a0e3d9b09b706" }
