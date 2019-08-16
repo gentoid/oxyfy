@@ -8,6 +8,7 @@ edition = "2018"
 
 [dependencies]
 nannou = "0.10"
+glob = "0.3"
 
 [patch.crates-io]
 "vulkano" = { git = "https://github.com/vulkano-rs/vulkano.git", rev = "0a8944362a176885d13a84a1ea5a0e3d9b09b706" }
