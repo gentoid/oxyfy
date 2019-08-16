@@ -31,6 +31,23 @@ fn model(app: &App) -> Model {
         }
     };
 
+    let filenames: Vec<String> = match glob::glob(&format!("{}/*.mp3", path.to_str().unwrap())) {
+        Ok(paths) => paths
+            .map(|p| {
+                p.expect("Should be a file")
+                    .file_name()
+                    .expect("Should have a filename")
+                    .to_str()
+                    .expect("Should be convertable")
+                    .to_string()
+            })
+            .collect(),
+        Err(err) => {
+            eprintln!("{:?}", err);
+            vec![]
+        }
+    };
+
     app.set_loop_mode(LoopMode::wait(3));
 
     let mut ui = app.new_ui().build().unwrap();
@@ -39,11 +56,6 @@ fn model(app: &App) -> Model {
     let font_path = assets_path.join("fonts/DroidSansMono.ttf");
     ui.fonts_mut().insert_from_file(font_path).ok();
 
-    let filenames = vec![
-        "Option 1".to_string(),
-        "Option 2".to_string(),
-        "Option 3".to_string(),
-    ];
     let selected = None;
     let ids = Ids {
         dd_list: ui.generate_widget_id(),
