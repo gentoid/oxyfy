@@ -1,10 +1,14 @@
-use nannou::{prelude::*, ui::prelude::*};
+use {
+    nannou::{prelude::*, ui::prelude::*},
+    std::{env, path::PathBuf, process::exit},
+};
 
 fn main() {
     nannou::app(model).update(update).simple_window(view).run();
 }
 
 struct Model {
+    path: PathBuf,
     filenames: Vec<String>,
     selected: Option<usize>,
     ui: Ui,
@@ -16,6 +20,17 @@ struct Ids {
 }
 
 fn model(app: &App) -> Model {
+    let path = {
+        let args: Vec<String> = env::args().collect();
+        match args.get(1) {
+            None => {
+                eprintln!("Pass a path to scan for files");
+                exit(1);
+            }
+            Some(path) => PathBuf::from(path),
+        }
+    };
+
     app.set_loop_mode(LoopMode::wait(3));
 
     let mut ui = app.new_ui().build().unwrap();
@@ -35,6 +50,7 @@ fn model(app: &App) -> Model {
     };
 
     Model {
+        path,
         filenames,
         selected,
         ui,
@@ -48,7 +64,7 @@ fn update(_app: &App, model: &mut Model, _update: Update) {
     for selected in widget::DropDownList::new(&model.filenames, model.selected)
         .top_left_with_margin(20.0)
         .w_h(800.0, 30.0)
-        .label("Colors")
+        .label(model.path.to_str().unwrap_or("Path wasn't passed"))
         .label_color(ui::color::BLACK)
         .color(ui::color::BLUE)
         .label_font_size(16)
